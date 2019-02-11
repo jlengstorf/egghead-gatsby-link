@@ -30,6 +30,7 @@ const Header = ({ siteTitle }) => (
       </Link>
       <NavLink to="/decisions">Make Decisions</NavLink>
       <NavLink to="/about">About</NavLink>
+      <NavLink to="/sign-up">Sign Up</NavLink>
     </nav>
   </header>
 );
