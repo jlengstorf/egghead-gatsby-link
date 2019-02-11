@@ -1,19 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-
-const linkStyles = {
-  color: 'white',
-  display: 'inline-block',
-  margin: '0 0.5rem',
-  padding: '0.25rem',
-  textDecoration: 'none'
-};
-
-const activeStyles = {
-  background: 'white',
-  color: 'rebeccapurple'
-};
+import NavLink from './nav-link';
 
 const Header = ({ siteTitle }) => (
   <header
@@ -40,20 +28,8 @@ const Header = ({ siteTitle }) => (
       >
         {siteTitle}
       </Link>
-      <Link to="/" style={linkStyles} activeStyle={activeStyles}>
-        Home
-      </Link>
-      <Link
-        to="/decisions"
-        style={linkStyles}
-        getProps={({ isPartiallyCurrent }) =>
-          isPartiallyCurrent
-            ? { style: { ...linkStyles, ...activeStyles } }
-            : null
-        }
-      >
-        Make Decisions
-      </Link>
+      <NavLink to="/decisions">Make Decisions</NavLink>
+      <NavLink to="/about">About</NavLink>
     </nav>
   </header>
 );
